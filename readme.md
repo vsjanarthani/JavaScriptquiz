@@ -1,6 +1,6 @@
 # Java Quiz Contest
 
-## Desciption
+## Description
 
 
 ## Live URL

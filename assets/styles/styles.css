@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile First design */
+
+body {
+    font-family: 'Times New Roman', Times, serif; 
+    margin: 10px;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: large;
+    font-variant: small-caps;
+}
+
+p {
+    text-align: center;
+    font-size: small;
+}
+
+/* Header Section */
+
+.header {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+    
+.title a,
+.time,
+.timervalue {
+    font-size: small;
+    width: 60%;
+    color: teal;
+    font-weight: bolder;
+    text-decoration: none;   
+}
+
+.timer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+.time,
+.timervalue {
+    margin: 5px;
+}
+
+/* Start Quiz Section */
+
+.main {
+
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    margin: 10px;
+    padding: 10PX;
+    line-height: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.box {
+    margin: 10px;
+    display: flex;
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.start {
+    background-color: teal;
+    font-size: small;
+    margin: 5px;
+    padding: 7px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.start:hover {
+    background-color: purple;
+}
+
+/* Display Question section  */
+
+.display {
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    top:80px;
+    display: none;
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
+}
+
+.active {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.questions {
+    width: 80%;
+    height: 40%;
+    position: fixed;  
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.question {
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.question h2 {
+    font-size: medium;
+    text-align: center;
+}
+
+.choice {
+    background-color: teal;
+    font-size: small;
+    margin: 5px;
+    padding: 7px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: whitesmoke;
+    width: 150px;
+    text-align: left;
+}
+
+.choice:hover {
+    background-color: purple;
+}
