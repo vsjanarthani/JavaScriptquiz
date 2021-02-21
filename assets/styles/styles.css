@@ -40,7 +40,7 @@ p {
     
 .title a,
 .time,
-.timervalue {
+#timervalue {
     font-size: small;
     width: 60%;
     color: teal;
@@ -56,7 +56,7 @@ p {
 }
 
 .time,
-.timervalue {
+#timervalue {
     margin: 5px;
 }
 
@@ -165,4 +165,20 @@ span {
 
 .choice:hover {
     background-color: purple;
+}
+
+.user-answer {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.user-answer h2 {
+    font-size: large;
 }
