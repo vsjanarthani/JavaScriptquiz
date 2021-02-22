@@ -22,6 +22,11 @@ h1 {
     font-variant: small-caps;
 }
 
+h3 {
+    text-align: center;
+    font-size: medium;
+}
+
 p {
     text-align: center;
     font-size: small;
@@ -90,7 +95,9 @@ span {
     font-style: italic;
 }
 
-.start {
+.start,
+.submit,
+.btn {
     background-color: teal;
     font-size: small;
     margin: 5px;
@@ -100,7 +107,9 @@ span {
     color: whitesmoke;
 }
 
-.start:hover {
+.start:hover,
+.submit:hover,
+.btn:hover {
     background-color: purple;
 }
 
@@ -181,4 +190,81 @@ span {
 
 .user-answer h2 {
     font-size: large;
+}
+
+/* Display Score section */
+
+.display-score {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top:80px;
+    margin-top: 10px;
+    background-color: white;
+    display: none;
+}
+
+.showit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.final-score {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin:10px;
+}
+
+.initials {
+    width: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+
+#initial {
+    width:80px;
+    height:25px;
+    margin: 10px;
+}
+
+/* Display High Score Section */
+
+.display-storage {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top:80px;
+    margin-top: 10px;
+    background-color: white;
+    display: none;
+}
+
+.showme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#highscores {
+    height: fit-content;
+    width: 70%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+#go-back {
+    text-decoration: none;
+    padding: 8px;
+    box-shadow: black 1px;
 }

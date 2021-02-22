@@ -10,9 +10,9 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
+    <header id="head" class="header">
         <div class="title">
-            <a href="#">View high scores</a>
+            <a href="#highscores" onclick="displayHighScore();">View high scores</a>
         </div>
         <div class="timer">
             <h4 class="time">Time:</h4>
@@ -20,7 +20,7 @@
         </div>    
     </header>
     <!-- Start Quiz Section -->
-    <section class="main">
+    <section id="start" class="main">
         <article class="container">
             <div class="box">
                 <h1>JavaScript Quiz Challenge</h1>
@@ -29,7 +29,7 @@
                 <p>Click the "Start Quiz" button to begin the challange. Try to answer as many questions as possible within 1 minute. Keep in mind that every <span>incorrect answer </span>will reduced your time by <span>10 seconds</span>. Good Luck!</p>
             </div>
             <div class="box">
-                <button class="start">Start Quiz</button>
+                <button type="button" class="start">Start Quiz</button>
             </div>   
         </article>
     </section>
@@ -40,16 +40,39 @@
             <h2 id="question-display">This is a sample question</h2>
             </div>
             <article id="answer-display" class="options">
-                <button id="Button1" class="choice">1. Option one</button>
-                <button id="Button2" class="choice">2. Option two</button>
-                <button id="Button3" class="choice">3. Option Three</button>
-                <button id="Button4" class="choice">4. Option Four</button>
+                <button type="button" id="Button1" class="choice">1. Option one</button>
+                <button type="button" id="Button2" class="choice">2. Option two</button>
+                <button type="button" id="Button3" class="choice">3. Option Three</button>
+                <button type="button" id="Button4" class="choice">4. Option Four</button>
             </article>
             <div class="user-answer">
                 <hr class="hr">
                 <h2 class="show-result">sample</h2>
             </div>
         </article> 
+    </section>
+    <!-- Display score section -->
+    <section id="score" class="display-score">
+        <h1>All Done!</h1>
+        <div class="final-score">
+            <h3>Your Final Score is:</h3>
+            <h3 id="score-value"></h3>
+        </div>
+        <div class="initials">
+            <h3>Enter Initials:</h3>
+            <textarea required id="initial"></textarea>
+            <button class="submit" type="button" onclick="storeData();">Submit</button>
+        </div>
+    </section>
+
+    <!-- Display Highscore section -->
+    <section id="high-score" class="display-storage">
+        <h1>High Scores</h1>
+        <p id="highscores">Nothing to Display at the moment</p>
+        <div class="displaybtn">
+            <a href="#top" type="button" onclick="goBack();" id="go-back" class="btn">Go Back</a>
+            <button type="button" id="clear" onclick="clearData();" class="btn">Clear</button>
+        </div>
     </section>
 
     <script src="./assets/script/javascript.js"></script>
