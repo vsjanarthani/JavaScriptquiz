@@ -9,6 +9,7 @@
 
 </head>
 <body>
+
     <!-- Header Section -->
     <header id="head" class="header">
         <div class="title">
@@ -19,6 +20,7 @@
             <h4 id="timervalue">0</h4>
         </div>    
     </header>
+
     <!-- Start Quiz Section -->
     <section id="start" class="main">
         <article class="container">
@@ -33,11 +35,12 @@
             </div>   
         </article>
     </section>
+
     <!-- Display Question section -->
     <section id="form" class="display">
         <article class="questions">
             <div class="question">
-            <h2 id="question-display">This is a sample question</h2>
+            <h3 id="question-display">This is a sample question</h3>
             </div>
             <article id="answer-display" class="options">
                 <button type="button" id="Button1" class="choice">1. Option one</button>
@@ -45,12 +48,13 @@
                 <button type="button" id="Button3" class="choice">3. Option Three</button>
                 <button type="button" id="Button4" class="choice">4. Option Four</button>
             </article>
-            <div class="user-answer">
+            <div id="result" class="user-answer">
                 <hr class="hr">
                 <h2 class="show-result">sample</h2>
             </div>
         </article> 
     </section>
+
     <!-- Display score section -->
     <section id="score" class="display-score">
         <h1>All Done!</h1>
@@ -70,7 +74,7 @@
         <h1>High Scores</h1>
         <p id="highscores">Nothing to Display at the moment</p>
         <div class="displaybtn">
-            <a href="#top" type="button" onclick="goBack();" id="go-back" class="btn">Go Back</a>
+            <button type="button" onclick="location.reload();" class="btn"><a href="#start" id="go-back">Go Back</a></button>
             <button type="button" id="clear" onclick="clearData();" class="btn">Clear</button>
         </div>
     </section>

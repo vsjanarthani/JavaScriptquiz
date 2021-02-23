@@ -6,7 +6,7 @@ const optionTwoEl = document.getElementById('Button2');
 const optionThreeEl = document.getElementById('Button3');
 const optionFourEl = document.getElementById('Button4');
 var timeValueEl = document.getElementById('timervalue');
-var divEl = document.querySelector('.user-answer');
+var divEl = document.getElementById('result');
 var h2El = document.querySelector('.show-result');
 var clickedEl = document.getElementById('answer-display');
 var scoreEl = document.getElementById('score');
@@ -15,6 +15,7 @@ var highscoreEl = document.getElementById('high-score');
 var headerEl = document.getElementById('head');
 var sectionEl = document.getElementById('start');
 var paraEl = document.getElementById('highscores');
+var displayEl = document.getElementById("form");
 
 var currentIndex;
 
@@ -80,11 +81,9 @@ var questions = [
 
 // Start Quiz function
 startQuizEl.addEventListener('click', function() {
-    var displayEl = document.getElementById("form");
     displayEl.classList.add("active");
     randomQuiz();
-    startTimer();
-   
+    startTimer();  
 });
 
 // function to display timer
@@ -144,14 +143,12 @@ clickedEl.addEventListener('click', function(event) {
 function verifyAns(userAns) {
 // Verifying if user answer is equal to answer in the array with the index of current index
     if (userAns == correctAns) {
-        divEl.classList.add("show");
+        divEl.classList.add("active");
         h2El.textContent = "Correct!"
-        console.log("this is the correct answer", correctAns);
     } else {
-        divEl.classList.add("show");
+        divEl.classList.add("active");
         h2El.textContent = "Wrong!"
         timeLeft = timeLeft - 10;
-        console.log("This is wrong answer", userAns + "Correct Ans is", correctAns);
     }
 }
 
@@ -159,7 +156,7 @@ function verifyAns(userAns) {
 function resetDiv() {
     document.getElementById('answer-display').addEventListener('mouseleave', event => {
         if (event.target.classList != "choice") {
-            divEl.classList.remove("show");
+            divEl.classList.remove("active");
         }
     });
 }
@@ -167,7 +164,7 @@ function resetDiv() {
 // function to display and store highscore
 function displayScore() {
     clearInterval(timer);
-    scoreEl.classList.add("showit");
+    scoreEl.classList.add("active");
     if (timeLeft <= 0) {
         timeLeft = 0;
         scoreValEl.innerText = timeLeft;
@@ -182,8 +179,6 @@ function displayScore() {
 function storeData() {
     var score = timeLeft;
     var initial = document.querySelector('#initial').value;
-    console.log(score);
-    console.log(initial);
     localStorage.setItem('initial', initial); 
     localStorage.setItem('score', score);
     displayHighScore();
@@ -191,26 +186,18 @@ function storeData() {
 
 // Function to display High score
 function displayHighScore() {
-    highscoreEl.classList.add("showme");
+    highscoreEl.classList.add("active");
     headerEl.classList.add("hide");
     sectionEl.classList.add("hide");
-    if (paraEl.value != null) {
-        paraEl.textContent = localStorage.getItem('initial') + " : " + localStorage.getItem('score');
-    } else {
+    if (localStorage.getItem('initial') == null) {
         paraEl.innerText = "Nothing to display at the moment.";
-    }
-    
+    } else {
+        paraEl.textContent = localStorage.getItem('initial') + " : " + localStorage.getItem('score');    
+    }  
 }
 
 // Function to clear storage
 function clearData() {
     localStorage.clear();
     paraEl.innerText = "Storage Cleared. Nothing to display at the moment.";
-}
-
-// Function to go back to homepage
-function goBack() {
-    headerEl.classList.remove("hide");
-    sectionEl.classList.remove("hide");
-    highscoreEl.classList.remove("showme");
 }

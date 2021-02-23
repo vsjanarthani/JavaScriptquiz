@@ -67,10 +67,6 @@ p {
 
 /* Start Quiz Section */
 
-.main {
-
-}
-
 .container {
     width: 90%;
     height: 100%;
@@ -121,16 +117,12 @@ span {
     position: absolute;
     top:80px;
     display: none;
-    margin: 15px;
-    padding: 10px;
-    background-color: white;
-}
-
-.active {
-    display: flex;
     flex-direction: column;
     align-content: center;
     flex-wrap: nowrap;
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
 }
 
 .questions {
@@ -184,10 +176,6 @@ span {
     display: none;
 }
 
-.show {
-    display: flex;
-}
-
 .user-answer h2 {
     font-size: large;
 }
@@ -202,10 +190,6 @@ span {
     margin-top: 10px;
     background-color: white;
     display: none;
-}
-
-.showit {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -243,10 +227,6 @@ span {
     margin-top: 10px;
     background-color: white;
     display: none;
-}
-
-.showme {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -259,12 +239,59 @@ span {
     padding: 10px;
 }
 
+#go-back {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.active {
+    display: flex;   
+}
+
 .hide {
     display: none;
 }
 
-#go-back {
-    text-decoration: none;
-    padding: 8px;
-    box-shadow: black 1px;
-}
+/* For large screens */
+
+@media screen and (min-width: 1800px) {
+    h1 {
+        font-size: 3rem;  
+    }
+
+    .user-answer h2 {
+        font-size: 1.9rem;
+    }
+    
+    h3,
+    p {
+        font-size: 1.5rem;
+    }
+
+    .title a,
+    .time,
+    #timervalue {
+        font-size: 1.2rem;
+    }
+
+    .start,
+    .submit,
+    .btn,
+    .choice {
+        font-size: 1rem;
+    }
+
+    .choice {
+        width: 200px;
+    }
+
+    .questions {
+        justify-content: flex-start ;
+        align-items: center;
+    }
+
+    .options {
+        width: 80%;
+        align-items: center;
+        margin: 15px;
+    }
