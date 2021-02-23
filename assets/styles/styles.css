@@ -252,9 +252,50 @@ span {
     display: none;
 }
 
-/* For large screens */
+/* For tablets */
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 600px) {
+    h1 {
+        font-size: 2rem;  
+    }
+
+    .user-answer h2,
+    h3,
+    p,
+    .title a,
+    .time,
+    #timervalue,
+    .start,
+    .submit,
+    .btn,
+    .choice {
+        font-size: 1rem;
+    }
+
+    .choice {
+        width: 180px;
+    }
+
+    .questions {
+        justify-content: flex-start ;
+        align-items: center;
+    }
+
+    .options {
+        width: 80%;
+        align-items: center;
+        margin: 15px;
+    }
+
+    #initial {
+        width:120px;
+        height:30px;
+    }
+}
+
+/* For laptops */
+
+@media screen and (min-width: 1200px) {
     h1 {
         font-size: 3rem;  
     }
@@ -295,3 +336,9 @@ span {
         align-items: center;
         margin: 15px;
     }
+
+    #initial {
+        width:120px;
+        height:30px;
+    }
+}
