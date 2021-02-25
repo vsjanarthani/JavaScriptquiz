@@ -19,8 +19,6 @@ var displayEl = document.getElementById("form");
 
 var currentIndex;
 
-
-
 // creating an array of questions, answers and options
 var questions = [
     {
@@ -177,10 +175,25 @@ function displayScore() {
 
 // Function to store timeleft in local storage
 function storeData() {
-    var score = timeLeft;
-    var initial = document.querySelector('#initial').value;
-    localStorage.setItem('initial', initial); 
-    localStorage.setItem('score', score);
+    // Get new data
+    var newScore = timeLeft;
+    var newInitial = document.querySelector('#initial').value;
+    var newData = { score: newScore,
+                    initial: newInitial};
+                
+    if (localStorage.getItem('highScores') == null) {
+        highScores = [];
+    } else {
+        highScores = JSON.parse(localStorage.getItem('highScores'));
+    }
+    
+    // Add new data to the exisitng data
+    highScores.push(newData);
+    // To sort scores in descending order
+    highScores.sort((a,b) => b.score - a.score); 
+    // To display top 5 scores only
+    highScores = highScores.slice(0, 5);  
+    localStorage.setItem('highScores', JSON.stringify(highScores)); 
     displayHighScore();
 }
 
@@ -189,10 +202,16 @@ function displayHighScore() {
     highscoreEl.classList.add("active");
     headerEl.classList.add("hide");
     sectionEl.classList.add("hide");
-    if (localStorage.getItem('initial') == null) {
+    if (localStorage.getItem('highScores') == null) {
         paraEl.innerText = "Nothing to display at the moment.";
     } else {
-        paraEl.textContent = localStorage.getItem('initial') + " : " + localStorage.getItem('score');    
+        var data = JSON.parse(localStorage.getItem('highScores')); 
+        var highScoreData = "";
+        for (let count = 0; count < data.length; count++) {
+            slNo = count + 1;
+            highScoreData = highScoreData + "<br>" + slNo + ". " + data[count].initial + " : " + data[count].score;
+        }
+        paraEl.innerHTML = highScoreData;
     }  
 }
 
